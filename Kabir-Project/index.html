@@ -1,127 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>For Harshini</title>
-
-<style>
-body{
-margin:0;
-overflow:hidden;
-font-family:Arial;
-background:black;
-color:white;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-text-align:center;
-}
-
-/* galaxy background */
-
-body::before{
-content:"";
-position:absolute;
-width:200%;
-height:200%;
-background:radial-gradient(white 1px, transparent 1px);
-background-size:50px 50px;
-animation:moveStars 60s linear infinite;
-opacity:0.4;
-}
-
-@keyframes moveStars{
-from{transform:translate(0,0);}
-to{transform:translate(-500px,-500px);}
-}
-
-/* glowing title */
-
-h1{
-font-size:55px;
-animation:glow 2s infinite alternate;
-}
-
-@keyframes glow{
-from{ text-shadow:0 0 10px pink;}
-to{ text-shadow:0 0 30px red;}
-}
-
-/* floating hearts */
-
-.heart{
-position:absolute;
-bottom:-50px;
-font-size:25px;
-color:#ff4d6d;
-animation:floatUp 6s linear infinite;
-}
-
-@keyframes floatUp{
-0%{transform:translateY(0);}
-100%{transform:translateY(-100vh);}
-}
-
-.box{
-background:rgba(255,255,255,0.1);
-padding:40px;
-border-radius:20px;
-backdrop-filter:blur(10px);
-z-index:1;
-}
-
-button{
-padding:12px 25px;
-font-size:18px;
-border:none;
-border-radius:10px;
-cursor:pointer;
-margin-top:20px;
-transition:0.3s;
-}
-
-button:hover{
-background:pink;
-transform:scale(1.1);
-}
-
-</style>
-
+    <meta charset="UTF-8">
+    <title>For Someone Special</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<div class="box">
+<div class="container">
+    <h1 id="title">Hello Harshini 🌸</h1>
 
-<h1>✨ Harshini ✨</h1>
+    <p id="typing"></p>
 
-<p>I made this small website for you.</p>
+    <button onclick="showMessage()">Click me</button>
 
-<button onclick="nextPage()">Click for surprise</button>
+    <div id="secret" class="hidden">
+        <p>
+        Sometimes you meet someone for a moment,
+        but that moment stays longer than expected.
+        </p>
 
+        <p>
+        I just wanted to say… you seem really special.
+        </p>
+    </div>
 </div>
 
-<script>
-
-function createHeart(){
-let heart=document.createElement("div");
-heart.className="heart";
-heart.innerHTML="❤✨";
-heart.style.left=Math.random()*100+"%";
-document.body.appendChild(heart);
-
-setTimeout(()=>{heart.remove();},6000);
-}
-
-setInterval(createHeart,400);
-
-/* go to next page */
-
-function nextPage(){
-window.location.href="message1.html";
-}
-
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
